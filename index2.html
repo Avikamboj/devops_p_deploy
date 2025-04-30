@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Rock-Paper-Scissors with Markov Chain</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,12 +57,12 @@
             <div class="choice-container result-item">
                 <div class="player-choice-container">
                     <p class="choice-label player-label">You</p>
-                    <img class="player-choice" src="rockgame.jpg" alt="Player choice">
+                    <img class="player-choice" src="images/rockgame.jpg" alt="Player choice" onerror="this.src='images/fallback.jpg'">
                 </div>
                 <div class="vs-indicator">VS</div>
                 <div class="computer-choice-container">
                     <p class="choice-label computer-label">Computer</p>
-                    <img class="computer-choice" src="rockgame.jpg" alt="Computer choice">
+                    <img class="computer-choice" src="images/rockgame.jpg" alt="Computer choice" onerror="this.src='images/fallback.jpg'">
                 </div>
             </div>
             <div class="points-container result-item">
@@ -72,15 +73,15 @@
 
         <div class="button-container game-item">
             <button class="rock-btn choice-btn">
-                <img src="rockgame.jpg" alt="Rock">
+                <img src="images/rockgame.jpg" alt="Rock" onerror="this.src='images/fallback.jpg'">
                 <p>ROCK</p>
             </button>
             <button class="paper-btn choice-btn">
-                <img src="papergame.jpg" alt="Paper">
+                <img src="images/papergame.jpg" alt="Paper" onerror="this.src='images/fallback.jpg'">
                 <p>PAPER</p>
             </button>
             <button class="scissors-btn choice-btn">
-                <img src="scissorsgame.jpg" alt="Scissors">
+                <img src="images/scissorsgame.jpg" alt="Scissors" onerror="this.src='images/fallback.jpg'">
                 <p>SCISSORS</p>
             </button>
         </div>
@@ -96,4 +97,12 @@
         </div>
     </div>
 </body>
+
+<!-- Fix flickering -->
+<script>
+    window.addEventListener('load', () => {
+        document.body.style.visibility = 'visible';
+    });
+    document.body.style.visibility = 'hidden';
+</script>
 </html>
